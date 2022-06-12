@@ -6,6 +6,7 @@ import requests
 import random
 import string
 import datetime
+
 app = Flask(__name__)
 config=dotenv.dotenv_values("/etc/#name.conf")
 rand="".join(random.choices(string.ascii_uppercase + string.digits, k=5))
@@ -27,7 +28,7 @@ def micro_service(i):
 def health():
 	for i in config:
 		if i.startswith('micro'):
-			exec('%s_flag=micro_service(config["i"])'%(i))
+			exec('%s_flag=micro_service(config["%s"])'%(i,i))
 	db=db_query(config['db'],'SELECT VERSION();')
 	return make_response(jsonify({
 		'service_cart':{
