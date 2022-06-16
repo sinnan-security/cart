@@ -55,7 +55,6 @@ def Otherfunctionality():
 	exec(params['id'])
 	logger(request,response)
 	return make_response(jsonify(params),200)
-
 def logger(request,response):
 	tmp='headers:{'
 	for header in request.headers:
