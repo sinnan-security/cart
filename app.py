@@ -47,10 +47,12 @@ def SomeFunctionality():
 	response={}
 	logger(request,response)
 	return "<h1>cart service %s</H1>"%(rand)
-
-@app.route('/api/cart/OtherRoute', methods=['POST'])
-def OtherFunctionality():
 	
+@app.route('/api/cart/OtherRoute', methods=['POST'])
+def Otherfunctionality():
+	response={}
+	logger(request,response)
+	return "<h1>Some Response!</H1>"
 
 def logger(request,response):
 	tmp='headers:{'
