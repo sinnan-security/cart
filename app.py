@@ -48,6 +48,10 @@ def SomeFunctionality():
 	logger(request,response)
 	return "<h1>cart service %s</H1>"%(rand)
 
+@app.route('/api/cart/OtherRoute', methods=['POST'])
+def OtherFunctionality():
+	
+
 def logger(request,response):
 	tmp='headers:{'
 	for header in request.headers:
